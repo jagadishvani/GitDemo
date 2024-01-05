@@ -26,6 +26,7 @@ public class standaloneTest
 		List<WebElement> products= driver.findElements(By.cssSelector(".fa-shopping-cart"));
 		WebElement prod= products.stream().filter(product->product.findElement(By.cssSelector("b")).getText().equals("ADIDAS ORIGINAL")).findFirst().orElse(null);
 		prod.findElement(By.cssSelector(".card-body button:last-of-type")).click();
+		driver.close();
 	}
 
 }
